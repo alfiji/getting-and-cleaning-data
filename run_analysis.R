@@ -16,7 +16,9 @@ labeljoining <- rbind(labeltraining, labeltest)
 subjectjoin <- rbind(subjecttraining, subjecttest)
 
 
-# 2) Extracts only the measurements on the mean and standard deviation for each measurement. 
+# 2) Extracts only the measurements on the mean and standard deviation for each measurement.
+# Cleaning up the variable names and doing the prefinal data table.
+
 
 meanStandard <- grep("mean\\(\\)|std\\(\\)", features[, 2])
 joinData <- datajoining[, meanStandard]
@@ -61,7 +63,7 @@ for(i in 1:lengthsubject) {
     row <- row + 1
   }
 }
-This is the required file: 
+#This is the required file: 
 write.table(result, "required-tidy-data.txt",row.name = FALSE) 
 
  
